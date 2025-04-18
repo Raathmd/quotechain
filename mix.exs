@@ -5,7 +5,7 @@ defmodule Quotechain.MixProject do
     [
       app: :quotechain,
       version: "0.1.0",
-      elixir: "~> 1.14",
+      elixir: "~> 1.18.3",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       consolidate_protocols: Mix.env() != :dev,

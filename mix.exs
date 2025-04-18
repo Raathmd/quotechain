@@ -33,6 +33,7 @@ defmodule Quotechain.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:mishka_chelekom, "~> 0.0", only: [:dev]},
       {:picosat_elixir, "~> 0.2"},
       {:sourceror, "~> 1.8", only: [:dev, :test]},
       {:live_debugger, "~> 0.1", only: [:dev]},

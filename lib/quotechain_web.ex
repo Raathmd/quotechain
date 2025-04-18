@@ -88,7 +88,7 @@ defmodule QuotechainWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components
-      import QuotechainWeb.CoreComponents
+      use QuotechainWeb.Components.MishkaComponents
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS

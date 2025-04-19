@@ -95,7 +95,7 @@ defmodule Dovetail.Quote do
     # Required if mandatory
     attribute :vehicle_category, :string, allow_nil?: true
 
-    attribute :items, Items.Item, public?: true
-    attribute :sundries, Sundries.Sundry, public?: true
+    attribute :item,  Items.Item, public?: true
+    attribute :sundry,  Sundries.Sundry, public?: true
   end
 end

@@ -51,7 +51,7 @@ config :spark,
 config :quotechain,
   ecto_repos: [Quotechain.Repo],
   generators: [timestamp_type: :utc_datetime],
-  ash_domains: [Quotechain.Accounts, Quotechain.Quotes]
+  ash_domains: [Quotechain.Accounts, Dovetail.Quotes]
 
 # Configures the endpoint
 config :quotechain, QuotechainWeb.Endpoint,

@@ -1,5 +1,5 @@
-defmodule Dovetail.Sundry do
-    use Ash.Resource, domain: Dovetail.Quotes,
+defmodule Sundries.Sundry do
+    use Ash.Resource,
     data_layer: :embedded,
     embed_nil_values?: false
   

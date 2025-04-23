@@ -1,11 +1,11 @@
-defmodule Dovetail.Quote do
+defmodule Quotes.Quote do
   use Ash.Resource,
     domain: Dovetail.Quotes,
     data_layer: AshPostgres.DataLayer
 
-  alias Dovetail.Items
-  alias Dovetail.Sundries
-
+  alias Items.Item
+  alias Sundries.Sundry
+ 
   postgres do
     table "quotes"
     repo Quotechain.Repo
@@ -95,7 +95,7 @@ defmodule Dovetail.Quote do
     # Required if mandatory
     attribute :vehicle_category, :string, allow_nil?: true
 
-    attribute :item,  Items.Item, public?: true
-    attribute :sundry,  Sundries.Sundry, public?: true
+    attribute :item,  Item, public?: true
+    attribute :sundry,  Sundry, public?: true
   end
 end

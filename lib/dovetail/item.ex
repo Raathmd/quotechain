@@ -1,5 +1,5 @@
-defmodule Dovetail.Item do
-    use Ash.Resource, domain: Dovetail.Quotes,
+defmodule Items.Item do
+    use Ash.Resource, 
     data_layer: :embedded,
     embed_nil_values?: false
   

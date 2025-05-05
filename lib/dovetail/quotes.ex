@@ -1,5 +1,5 @@
 defmodule Dovetail.Quotes do
-    use Ash.Domain
+    use Ash.Domain, extensions: [AshPhoenix]
   
     resources do
       resource Dovetail.Quote

@@ -30,8 +30,11 @@ defmodule Dovetail.Item do
 
     validations do
       validate present([:quote_number, :line_number,
-      :description], at_least: 1),,
-      validate numbericality(:quantity, greater_than: 0)
+      :description], at_least: 1)
+      
+      validate numericality(:quantity, greater_than: 0),
+       where: [present(:quantity)],
+       message: "Must be greater then 0"
     end
 
   end

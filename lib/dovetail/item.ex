@@ -1,4 +1,4 @@
-defmodule Items.Item do
+defmodule Dovetail.Item do
     use Ash.Resource, 
     data_layer: :embedded,
     embed_nil_values?: false
@@ -27,4 +27,11 @@ defmodule Items.Item do
       # System default if not supplied
       attribute :rate_type, :string, allow_nil?: true
     end
+
+    validations do
+      validate present([:quote_number, :line_number,
+      :description], at_least: 1),,
+      validate numbericality(:quantity, greater_than: 0)
+    end
+
   end

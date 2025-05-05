@@ -1,11 +1,11 @@
-defmodule Quotes.Quote do
+defmodule Dovetail.Quote do
   use Ash.Resource,
     domain: Dovetail.Quotes,
     data_layer: AshPostgres.DataLayer
 
-  alias Items.Item
-  alias Sundries.Sundry
- 
+  alias Dovetail.Item
+  alias Dovetail.Sundry
+
   postgres do
     table "quotes"
     repo Quotechain.Repo
@@ -15,8 +15,78 @@ defmodule Quotes.Quote do
     # Use the default implementation of the :read action
     defaults [:read]
 
-    # and a create action, which we'll customize later
-    create :create
+    # and a create action for a request before submitting create action to Freigfhtware
+    create :request do
+      accept [
+        :quote_number,
+        :quote_obj,
+        :quote_date,
+        :account_reference,
+        :shipper_reference,
+        :service_type,
+        :rate_type,
+        :consignor_site,
+        :consignor_name,
+        :consignor_street,
+        :consignor_suburb,
+        :consignor_city,
+        :consignor_postal_code,
+        :consignee_site,
+        :consignee_name,
+        :consignee_street,
+        :consignee_suburb,
+        :consignee_city,
+        :consignee_postal_code
+      ]
+    end
+
+    create :quick_quote do
+      accept [
+        :quote_number,
+        :quote_obj,
+        :quote_date,
+        :account_reference,
+        :shipper_reference,
+        :service_type,
+        :rate_type,
+        :consignor_site,
+        :consignor_name,
+        :consignor_street,
+        :consignor_suburb,
+        :consignor_city,
+        :consignor_postal_code,
+        :consignee_site,
+        :consignee_name,
+        :consignee_street,
+        :consignee_suburb,
+        :consignee_city,
+        :consignee_postal_code
+      ]
+    end
+
+    create :create_quote do
+      accept [
+        :quote_number,
+        :quote_obj,
+        :quote_date,
+        :account_reference,
+        :shipper_reference,
+        :service_type,
+        :rate_type,
+        :consignor_site,
+        :consignor_name,
+        :consignor_street,
+        :consignor_suburb,
+        :consignor_city,
+        :consignor_postal_code,
+        :consignee_site,
+        :consignee_name,
+        :consignee_street,
+        :consignee_suburb,
+        :consignee_city,
+        :consignee_postal_code
+      ]
+    end
   end
 
   attributes do
@@ -95,7 +165,7 @@ defmodule Quotes.Quote do
     # Required if mandatory
     attribute :vehicle_category, :string, allow_nil?: true
 
-    attribute :item,  Item, public?: true
-    attribute :sundry,  Sundry, public?: true
+    attribute :item, Item, public?: true
+    attribute :sundry, Sundry, public?: true
   end
 end

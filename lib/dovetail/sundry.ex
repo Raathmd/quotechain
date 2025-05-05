@@ -1,4 +1,4 @@
-defmodule Sundries.Sundry do
+defmodule Dovetail.Sundry do
     use Ash.Resource,
     data_layer: :embedded,
     embed_nil_values?: false
@@ -18,5 +18,8 @@ defmodule Sundries.Sundry do
       # Indicates if override is allowed
       attribute :sundry_can_override, :boolean, allow_nil?: true
     end
+  
   end
+
+
   

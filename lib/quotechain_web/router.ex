@@ -67,7 +67,7 @@ defmodule QuotechainWeb.Router do
       auth_routes_prefix: "/auth",
       overrides: [QuotechainWeb.AuthOverrides, AshAuthentication.Phoenix.Overrides.Default]
     
-      live "/quote", QuoteLive.Index
+      live "/quotes", QuoteLive.Index, :index
   end
 
   # Other scopes may use custom stacks.

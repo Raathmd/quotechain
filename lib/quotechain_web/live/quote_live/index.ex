@@ -47,6 +47,8 @@ defmodule QuotechainWeb.QuoteLive.Index do
 
   @impl true
   def mount(_params, _session, socket) do
+    quotes = Ash.read!(Dovetail.Quote, actor: socket.assigns[:current_user])
+    IO.inspect(quotes, label: "ash quote******")
     {:ok,
      socket
      |> stream(:Quotes, Ash.read!(Dovetail.Quote, actor: socket.assigns[:current_user]))
@@ -55,6 +57,7 @@ defmodule QuotechainWeb.QuoteLive.Index do
 
   @impl true
   def handle_params(params, _url, socket) do
+    
     {:noreply, apply_action(socket, socket.assigns.live_action, params)}
   end
 

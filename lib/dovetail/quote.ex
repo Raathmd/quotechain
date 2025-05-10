@@ -17,6 +17,7 @@ defmodule Dovetail.Quote do
 
     # and a create action for a request before submitting create action to Freigfhtware
     create :request do
+      primary? true
       accept [
         :quote_number,
         :quote_obj,
@@ -31,12 +32,18 @@ defmodule Dovetail.Quote do
         :consignor_suburb,
         :consignor_city,
         :consignor_postal_code,
+        :consignor_building,        # Added
+        :consignor_contact_name,   # Added
+        :consignor_contact_tel,    # Added
         :consignee_site,
         :consignee_name,
         :consignee_street,
         :consignee_suburb,
         :consignee_city,
-        :consignee_postal_code
+        :consignee_postal_code,
+        :consignee_building,       # Added
+        :consignee_contact_name,   # Added
+        :consignee_contact_tel     # Added
       ]
     end
 
@@ -55,12 +62,18 @@ defmodule Dovetail.Quote do
         :consignor_suburb,
         :consignor_city,
         :consignor_postal_code,
+        :consignor_building,        # Added
+        :consignor_contact_name,   # Added
+        :consignor_contact_tel,    # Added
         :consignee_site,
         :consignee_name,
         :consignee_street,
         :consignee_suburb,
         :consignee_city,
-        :consignee_postal_code
+        :consignee_postal_code,
+        :consignee_building,       # Added
+        :consignee_contact_name,   # Added
+        :consignee_contact_tel     # Added
       ]
     end
 
@@ -79,12 +92,18 @@ defmodule Dovetail.Quote do
         :consignor_suburb,
         :consignor_city,
         :consignor_postal_code,
+        :consignor_building,        # Added
+        :consignor_contact_name,   # Added
+        :consignor_contact_tel,    # Added
         :consignee_site,
         :consignee_name,
         :consignee_street,
         :consignee_suburb,
         :consignee_city,
-        :consignee_postal_code
+        :consignee_postal_code,
+        :consignee_building,       # Added
+        :consignee_contact_name,   # Added
+        :consignee_contact_tel     # Added
       ]
     end
   end

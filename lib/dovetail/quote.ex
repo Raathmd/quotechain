@@ -12,9 +12,7 @@ defmodule Dovetail.Quote do
   end
 
   actions do
-    # Use the default implementation of the :read action
-    defaults [:read]
-
+        defaults [:read]
     # and a create action for a request before submitting create action to Freigfhtware
     create :request do
       primary? true
@@ -92,19 +90,23 @@ defmodule Dovetail.Quote do
         :consignor_suburb,
         :consignor_city,
         :consignor_postal_code,
-        :consignor_building,        # Added
-        :consignor_contact_name,   # Added
-        :consignor_contact_tel,    # Added
+        :consignor_building,       
+        :consignor_contact_name,   
+        :consignor_contact_tel,    
         :consignee_site,
         :consignee_name,
         :consignee_street,
         :consignee_suburb,
         :consignee_city,
         :consignee_postal_code,
-        :consignee_building,       # Added
-        :consignee_contact_name,   # Added
-        :consignee_contact_tel     # Added
+        :consignee_building,       
+        :consignee_contact_name,   
+        :consignee_contact_tel     
       ]
+    end
+
+    read :search do
+      primary? true
     end
   end
 
